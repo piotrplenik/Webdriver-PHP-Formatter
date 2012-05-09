@@ -185,11 +185,11 @@ this.options = {
 
 options.header =
 	"<?php\n" 
-	+ "\n"
-	+ "class ${className} extends ${extendedClass} \n {" +
 	+ "\n" 
-	+ "\n"
+	+ "class ${className} extends ${extendedClass}\n"
+	+ "{\n" 
 	+ indents(1) + "/** \n"
+	+ indents(1) + " * Method ${methodName} \n"
 	+ indents(1) + " * @test \n"
 	+ indents(1) + " */ \n"
 	+ indents(1) + "public function ${methodName}()\n"
@@ -199,6 +199,7 @@ options.footer =
 	indents(1) + "}\n"
 	+ "\n"
     + "}\n"
+	+ "\n"
     + "?>";
 
 this.configForm =
