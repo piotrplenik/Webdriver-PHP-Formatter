@@ -13,7 +13,7 @@ function testClassName(testName) {
   return testName.split(/[^0-9A-Za-z]+/).map(
       function(x) {
         return capitalize(x);
-      }).join('');
+      }).join('Test');
 }
 
 function testMethodName(testName) {
@@ -177,22 +177,29 @@ this.options = {
   receiver: "driver",
   environment: "*chrome",
   extendedClass: "sfBasePhpunitSelenium2TestCase",
-  indent:    'tab',
+  indent:    '4',
   initialIndents:    '2',
   showSelenese: 'false',
   defaultExtension: "php"
 };
 
 options.header =
-	"class ${className} extends ${extendedClass} {\n" 
+	"<?php\n" 
 	+ "\n"
-	+ indents(1) + "public ${methodName}() "
+	+ "class ${className} extends ${extendedClass} \n {" +
+	+ "\n" 
+	+ "\n"
+	+ indents(1) + "/** \n"
+	+ indents(1) + " * @test \n"
+	+ indents(1) + " */ \n"
+	+ indents(1) + "public function ${methodName}()\n"
 	+ indents(1) + "{\n";
 
 options.footer =
 	indents(1) + "}\n"
 	+ "\n"
-    + "}\n";
+    + "}\n"
+    + "?>";
 
 this.configForm =
     '<description>Variable for Selenium instance</description>' +
