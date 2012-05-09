@@ -1,4 +1,4 @@
-Webdriver-PHP-Formatter
-=======================
+README
 
-Selenium PHP Webdriver Formatter
+This is a PHP WebDriver Formatter for Selenium IDE.
+
